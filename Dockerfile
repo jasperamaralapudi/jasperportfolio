@@ -2,14 +2,19 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy the project files and restore dependencies
-COPY *.sln .
+# Copy the solution and project files
+COPY jasper-portfolio.sln .
 COPY jasper-portfolio/*.csproj ./jasper-portfolio/
-RUN dotnet restore ./jasper-portfolio/jasper-portfolio.csproj
 
-# Build and publish the application
+# Restore dependencies
+WORKDIR /app/jasper-portfolio
+RUN dotnet restore
+
+# Copy all files and build the application
+WORKDIR /app
 COPY . .
-RUN dotnet publish -c Release -o out ./jasper-portfolio/jasper-portfolio.csproj
+WORKDIR /app/jasper-portfolio
+RUN dotnet publish -c Release -o /app/out
 
 # Use the official ASP.NET runtime image to run the app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
