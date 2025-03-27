@@ -1,0 +1,49 @@
+﻿@model jasper_portfolio.Models.SkillsViewModel
+
+<section id="skills" class="section-skills">
+    <div class="skills-card">
+        <h2>Skills</h2>
+
+        @if (Model != null)
+        {
+            <div class="skills-category">
+                <h4><i class="fas fa-code"></i> Languages</h4>
+                <p>@string.Join(", ", Model.Languages)</p>
+            </div>
+
+            <div class="skills-category">
+                <h4><i class="fas fa-laptop-code"></i> Web Technologies</h4>
+                <p>@string.Join(", ", Model.WebTechnologies)</p>
+            </div>
+
+            <div class="skills-category">
+                <h4><i class="fas fa-database"></i> Database Systems</h4>
+                <p>@string.Join(", ", Model.DatabaseSystems)</p>
+            </div>
+
+            <div class="skills-category">
+                <h4><i class="fas fa-brain"></i> Data Science &amp; Machine Learning</h4>
+                <p>@string.Join(", ", Model.DataScienceML)</p>
+            </div>
+
+            <div class="skills-category">
+                <h4><i class="fas fa-cloud"></i> Cloud Technologies</h4>
+                <p>@string.Join(", ", Model.CloudTechnologies)</p>
+            </div>
+
+            <div class="skills-category">
+                <h4><i class="fas fa-star"></i> Specialized Area</h4>
+                <p>@string.Join(", ", Model.SpecializedArea)</p>
+            </div>
+
+            <div class="skills-category">
+                <h4><i class="fas fa-tools"></i> Other Tools &amp; Technologies</h4>
+                <p>@string.Join(", ", Model.OtherToolsTechnologies)</p>
+            </div>
+        }
+        else
+        {
+            <p>No skills information available.</p>
+        }
+    </div>
+</section>

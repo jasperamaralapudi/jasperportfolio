@@ -1,0 +1,596 @@
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Basic Reset */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+}
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        justify-content: center; /* or space-between, etc. */
+    }
+
+    .navbar li {
+        display: inline;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+/* Section Styles */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-intro {
+    background-color: #f5f5f5;
+}
+
+    .section-intro .intro-content {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Intro Section */
+
+
+/* Intro Section */
+.section-intro {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Profile Picture */
+.profile-pic-wrapper {
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Intro Text Styling */
+.intro-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.intro-text .lead {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Social Icons Styling */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    font-size: 1.8rem;
+    color: #555;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+    .social-icon:hover {
+        color: #007bff; /* Change to your desired accent color */
+        transform: translateY(-5px);
+    }
+
+/* Education Section */
+.section-education {
+    background-color: #f7f7f7; /* Light gray background to separate the section */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card Container for Education */
+.education-card {
+    background-color: #fff;
+    max-width: 2000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+}
+
+    /* Section Title */
+    .education-card h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #333;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #007bff; /* Accent color for a professional feel */
+    }
+
+    /* University Name */
+    .education-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        color: #444;
+    }
+
+/* Degree and CGPA */
+.degree {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Subheading for Course Work */
+.education-card h4 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #555;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Course Work List */
+.coursework-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align list items to the left for readability */
+    display: inline-block; /* Keep the list items together in the center */
+}
+
+    .coursework-list li {
+        font-size: 1rem;
+        color: #555;
+        padding: 6px 0;
+        border-bottom: 1px solid #eee; /* Light line to separate each course */
+    }
+
+        /* Last list item without border */
+        .coursework-list li:last-child {
+            border-bottom: none;
+        }
+
+
+/* Skills Section */
+.section-skills {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card Container for Skills */
+.skills-card {
+    background-color: #fff;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    /* Section Title */
+    .skills-card h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #333;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #007bff;
+    }
+
+/* Skill Categories */
+.skills-category {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+    /* Category Headings */
+    .skills-category h4 {
+        font-size: 1.3rem;
+        color: #555;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+        /* Icon Styling in Headings */
+        .skills-category h4 i {
+            margin-right: 8px;
+            color: #555;
+        }
+
+    /* Skills Text */
+    .skills-category p {
+        font-size: 1rem;
+        color: #555;
+        margin: 0;
+    }
+
+/* Experience Section */
+.section-experience {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: left;
+}
+
+.experience-card {
+    background-color: #fff;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .experience-card h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #333;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #007bff;
+    }
+
+.experience-entry {
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+    .experience-entry h3 {
+        font-size: 1.6rem;
+        color: #444;
+        margin-bottom: 5px;
+    }
+
+    
+
+    .experience-entry .position {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 5px;
+        text-align: justify;
+    }
+
+    .experience-entry .duration-location {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+
+.experience-bullets {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+    .experience-bullets li {
+        font-size: 1rem;
+        color: #555;
+        padding: 5px 0;
+        text-align: justify;
+        margin-bottom: 8px;
+    }
+
+/* Projects Section */
+.section-projects {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: left;
+}
+
+.projects-card {
+    background-color: #fff;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .projects-card h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #333;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #007bff;
+    }
+
+.project-entry {
+    margin-bottom: 40px;
+}
+
+    .project-entry h3 {
+        font-size: 1.6rem;
+        color: #444;
+        margin-bottom: 10px;
+
+    }
+
+.project-bullets {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+    .project-bullets li {
+        font-size: 1rem;
+        color: #555;
+        padding: 5px 0;
+        margin-bottom: 8px;
+        text-align: justify;
+    }
+/* Certifications Section */
+.section-certifications {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.certifications-card {
+    background-color: #fff;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    .certifications-card h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #333;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #007bff;
+    }
+
+.certifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+    .certifications-list li {
+        font-size: 1rem;
+        color: #555;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+        .certifications-list li:last-child {
+            border-bottom: none;
+        }
+
+/* Contact Section */
+.section-contact {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    background-color: #fff;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .contact-card h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #333;
+        display: inline-block;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #007bff;
+    }
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+    .contact-form .form-control:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+
+.alert-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+/* Navbar Styling */
+.navbar {
+    background-color: #1a1a1a; /* Dark background for a sleek look */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+        .navbar ul li {
+            margin: 0 12px;
+        }
+
+            .navbar ul li a {
+                text-decoration: none;
+                color: #f5f5f5; /* Light text for contrast */
+                font-size: 16px;
+                font-weight: 600;
+                padding: 10px 15px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+                /* Hover effect */
+                .navbar ul li a:hover {
+                    color: #f5f5f5; /* New hover color: Professional orange */
+                    background-color: rgba(255, 255, 255, 0.1);
+                    text-decoration: none; /* Prevent underlining */
+                    transform: translateY(-2px); /* Slight lift effect on hover */
+                }
+
+                /* Active/Selected State (Optional) */
+                .navbar ul li a.active {
+                    color: #f5f5f5;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+        .navbar ul {
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+
+            .navbar ul li {
+                margin: 8px 0;
+            }
+
+                .navbar ul li a {
+                    display: block;
+                    width: 100%;
+                }
+}

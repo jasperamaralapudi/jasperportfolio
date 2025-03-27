@@ -1,0 +1,20 @@
+﻿@model jasper_portfolio.Models.CertificationsViewModel
+
+<section id="certifications" class="section-certifications">
+    <div class="certifications-card">
+        <h2><i class="fas fa-certificate"></i> Certifications</h2>
+        @if (Model != null && Model.Certifications != null && Model.Certifications.Count > 0)
+        {
+            <ul class="certifications-list">
+                @foreach (var cert in Model.Certifications)
+                {
+                    <li>@cert</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No certifications available.</p>
+        }
+    </div>
+</section>

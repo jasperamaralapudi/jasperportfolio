@@ -1,0 +1,41 @@
+﻿@model jasper_portfolio.Models.PortfolioViewModel
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Intro Section -->
+<section id="intro" class="section-intro">
+    <div class="intro-content">
+        <!-- Profile Picture -->
+        <div class="profile-pic-wrapper">
+            <img src="@Url.Content(Model.Intro.ProfileImagePath)" alt="Profile Picture" class="profile-pic" />
+        </div>
+
+        <!-- Name and Title -->
+        <div class="intro-text">
+            <h1>@Model.Intro.Name</h1>
+            <p class="lead">@Model.Intro.Title</p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="@Model.Intro.LinkedInUrl" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="@Model.Intro.GitHubUrl" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:@Model.Intro.Email" class="social-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section (Using Partial View) -->
+@Html.Partial("_Education", Model.Education)
+@await Html.PartialAsync("_Skills", Model.Skills)
+@await Html.PartialAsync("_Experience", Model.Experiences)
+@await Html.PartialAsync("_Projects", Model.Projects)
+@await Html.PartialAsync("_Certifications", Model.Certifications)

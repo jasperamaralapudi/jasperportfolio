@@ -1,0 +1,46 @@
+﻿@model jasper_portfolio.Models.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="contact" class="section-contact">
+    <div class="contact-card">
+        <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "contact-form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Your Name" })
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Your Email" })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Subject)
+                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", placeholder = "Subject" })
+                @Html.ValidationMessageFor(m => m.Subject)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Message)
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control", placeholder = "Your Message", rows = 5 })
+                @Html.ValidationMessageFor(m => m.Message)
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+        }
+    </div>
+</section>

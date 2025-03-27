@@ -1,0 +1,24 @@
+﻿@model jasper_portfolio.Models.EducationViewModel
+
+<section id="education" class="section-education">
+    <div class="education-card">
+        <h2>Education</h2>
+        @if (Model != null)
+        {
+            <h3>@Model.University</h3>
+            <p class="degree">@Model.Degree | CGPA: @Model.CGPA</p>
+
+            <h4>Course Work</h4>
+            <ul class="coursework-list">
+                @foreach (var course in Model.CourseWork)
+                {
+                    <li>@course</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No education information available.</p>
+        }
+    </div>
+</section>

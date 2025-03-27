@@ -1,0 +1,26 @@
+﻿@model List<jasper_portfolio.Models.ProjectEntry>
+
+<section id="projects" class="section-projects">
+    <div class="projects-card">
+        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+        @if (Model != null && Model.Count > 0)
+        {
+            @foreach (var project in Model)
+            {
+                <div class="project-entry">
+                    <h3>@project.Title</h3>
+                    <ul class="project-bullets">
+                        @foreach (var bullet in project.BulletPoints)
+                        {
+                            <li>@bullet</li>
+                        }
+                    </ul>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No projects available.</p>
+        }
+    </div>
+</section>
