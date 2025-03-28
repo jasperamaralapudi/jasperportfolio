@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "jasper-portfolio/1.0.0": {
+        "runtime": {
+          "jasper-portfolio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "jasper-portfolio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

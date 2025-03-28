@@ -1,6 +1,8 @@
 using jasper_portfolio.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Mail;
 
 namespace jasper_portfolio.Controllers
 {
@@ -123,9 +125,38 @@ namespace jasper_portfolio.Controllers
         {
             if (ModelState.IsValid)
             {
-                // TODO: Implement email sending or database storage for the message.
-                TempData["SuccessMessage"] = "Thank you for your message! I will get back to you soon.";
-                return RedirectToAction("Contact");
+                try
+                {
+                    // Configure SMTP client to use MailHog
+                    SmtpClient smtpClient = new SmtpClient("localhost", 1025)
+                    {
+                        // MailHog doesn't require credentials
+                        Credentials = new NetworkCredential("", ""),
+                        EnableSsl = false
+                    };
+
+                    // Create the email message
+                    MailMessage mailMessage = new MailMessage
+                    {
+                        From = new MailAddress("jasperenoch0@gmail.com", "Portfolio Contact Form"),
+                        Subject = model.Subject,
+                        Body = $"Name: {model.Name}\nEmail: {model.Email}\nMessage:\n{model.Message}",
+                        IsBodyHtml = false,
+                    };
+
+                    // The recipient can be any email address; MailHog will capture it
+                    mailMessage.To.Add("anyrecipient@example.com");
+
+                    smtpClient.Send(mailMessage);
+
+                    TempData["SuccessMessage"] = "Thank you for your message! I will get back to you soon.";
+                    return RedirectToAction("Contact");
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception or add a model error
+                    ModelState.AddModelError("", "There was an error sending your message. Please try again later.");
+                }
             }
             return View(model);
         }
